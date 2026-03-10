@@ -3,12 +3,14 @@
 <head>
 <title>Exam Result 2026</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 
 body{
 background:black;
 color:white;
-font-family:Arial;
+font-family:Arial, sans-serif;
 text-align:center;
 display:flex;
 justify-content:center;
@@ -19,12 +21,12 @@ margin:0;
 }
 
 h1{
-font-size:60px;
+font-size:50px;
 color:red;
 }
 
 #loading{
-font-size:30px;
+font-size:25px;
 }
 
 #meme{
@@ -37,6 +39,7 @@ height:100%;
 background:black;
 justify-content:center;
 align-items:center;
+z-index:999;
 }
 
 #meme img{
@@ -69,12 +72,12 @@ document.getElementById("loading").innerHTML =
 
 document.getElementById("meme").style.display="flex";
 
-// sound play
 let sound = document.getElementById("boom");
-sound.volume = 1;
-sound.play();
 
-// phone vibration (mobile only)
+sound.volume = 1;
+sound.play().catch(()=>{});
+
+// phone vibration
 if(navigator.vibrate){
 navigator.vibrate([500,200,500,200,500]);
 }
