@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exam Result 2026</title>
+
+<style>
+
+body{
+background:black;
+color:white;
+font-family:Arial;
+text-align:center;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+flex-direction:column;
+margin:0;
+}
+
+h1{
+font-size:60px;
+color:red;
+}
+
+#loading{
+font-size:30px;
+}
+
+#meme{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+justify-content:center;
+align-items:center;
+}
+
+#meme img{
+width:90%;
+max-width:900px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>📢 Exam Result 2026</h1>
+<p id="loading">Checking your result...</p>
+
+<div id="meme">
+<img src="https://i.imgflip.com/4t0m5.jpg">
+</div>
+
+<audio id="boom">
+<source src="boom.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+setTimeout(function(){
+
+document.getElementById("loading").innerHTML =
+"🎉 Congratulations! You passed… in your dreams 😂";
+
+document.getElementById("meme").style.display="flex";
+
+// sound play
+let sound = document.getElementById("boom");
+sound.volume = 1;
+sound.play();
+
+// phone vibration (mobile only)
+if(navigator.vibrate){
+navigator.vibrate([500,200,500,200,500]);
+}
+
+},4000);
+
+</script>
+
+</body>
+</html>
